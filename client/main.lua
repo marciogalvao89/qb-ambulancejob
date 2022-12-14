@@ -697,9 +697,9 @@ end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
     local ped = PlayerPedId()
-    TriggerServerEvent("hospital:server:SetDeathStatus", false)
-    TriggerServerEvent('hospital:server:SetLaststandStatus', false)
-    TriggerServerEvent("hospital:server:SetArmor", GetPedArmour(ped))
+    --TriggerServerEvent("hospital:server:SetDeathStatus", false)
+    --TriggerServerEvent('hospital:server:SetLaststandStatus', false)
+    --TriggerServerEvent("hospital:server:SetArmor", GetPedArmour(ped))
     if bedOccupying then
         TriggerServerEvent("hospital:server:LeaveBed", bedOccupying)
     end

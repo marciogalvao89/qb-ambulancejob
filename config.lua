@@ -4,7 +4,7 @@ Config.MinimalDoctors = 2 -- How many players with the ambulance job to prevent 
 Config.DocCooldown = 1 -- Cooldown between doctor calls allowed, in minutes
 Config.WipeInventoryOnRespawn = true -- Enable or disable removing all the players items when they respawn at the hospital
 Config.Helicopter = "polmav" -- Helicopter model that players with the ambulance job can use
-Config.BillCost = 2000 -- Price that players are charged for using the hospital check-in system
+Config.BillCost = 200 -- Price that players are charged for using the hospital check-in system
 Config.DeathTime = 300 -- How long the timer is for players to bleed out completely and respawn at the hospital
 Config.PainkillerInterval = 60 -- Set the length of time painkillers last (per one)
 Config.HealthDamage = 5 -- Minumum damage done to health before checking for injuries
@@ -35,53 +35,79 @@ Config.AlertShowInfo = 2 -- How many injuries a player must have before being al
 
 Config.Locations = { -- Edit the various interaction points for players or create new ones
     ["checking"] = {
-	    [1] = vector3(308.19, -595.35, 43.29),
-	    [2] = vector3(-254.54, 6331.78, 32.43), -- paleto
+	    [1] = vector3(311.59, -592.1, 43.28),
+	    [2] = vector3(350.82, -588.23, 28.8), -- paleto
     },
     ["duty"] = {
-        [1] = vector3(311.18, -599.25, 43.29),
-        [2] = vector3(-254.88, 6324.5, 32.58),
+        [1] = vector3(306.81, -597.92, 43.28),
+        [2] = vector3(349.81, -585.65, 28.8),
     },
     ["vehicle"] = {
         [1] = vector4(294.578, -574.761, 43.179, 35.79),
-        [2] = vector4(-234.28, 6329.16, 32.15, 222.5),
+        [2] = vector4(325.52, -574.43, 28.15, 159.93),
     },
     ["helicopter"] = {
         [1] = vector4(351.58, -587.45, 74.16, 160.5),
-        [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
+        [2] = vector4(-475.43, 5988.353, 31.716, 31.34), -- paleto
     },
     ["armory"] = {
-        [1] = vector3(309.93, -602.94, 43.29),
-        [2] = vector3(-245.13, 6315.71, 32.82),
+        [1] = vector3(306.66, -601.78, 43.28),
+        [2] = vector3(348.73, -587.97, 28.8),
     },
     ["roof"] = {
         [1] = vector4(338.5, -583.85, 74.16, 245.5),
     },
     ["main"] = {
-        [1] = vector3(298.74, -599.33, 43.29),
+        [1] = vector3(327.19, -603.49, 43.28), -- Entrada blip para o telhado do heli
     },
     ["stash"] = {
-        [1] = vector3(309.78, -596.6, 43.29),
+        [1] = vector3(303.97, -599.92, 43.28),
     },
     ["beds"] = {
-        [1] = {coords = vector4(353.1, -584.6, 43.11, 152.08), taken = false, model = 1631638868},
-        [2] = {coords = vector4(356.79, -585.86, 43.11, 152.08), taken = false, model = 1631638868},
-        [3] = {coords = vector4(354.12, -593.12, 43.1, 336.32), taken = false, model = 2117668672},
-        [4] = {coords = vector4(350.79, -591.8, 43.1, 336.32), taken = false, model = 2117668672},
-        [5] = {coords = vector4(346.99, -590.48, 43.1, 336.32), taken = false, model = 2117668672},
-        [6] = {coords = vector4(360.32, -587.19, 43.02, 152.08), taken = false, model = -1091386327},
-        [7] = {coords = vector4(349.82, -583.33, 43.02, 152.08), taken = false, model = -1091386327},
-        [8] = {coords = vector4(326.98, -576.17, 43.02, 152.08), taken = false, model = -1091386327},
-	--- paleto
-	    [9] = {coords = vector4(-252.43, 6312.25, 32.34, 313.48), taken = false, model = 2117668672},
-        [10] = {coords = vector4(-247.04, 6317.95, 32.34, 134.64), taken = false, model = 2117668672},
-        [11] = {coords = vector4(-255.98, 6315.67, 32.34, 313.91), taken = false, model = 2117668672},
+        -- Sala Intense Care
+        [1] = {coords = vector4(307.72, -581.75, 42.84, 160.00), taken = false, model = 1631638868},
+        [2] = {coords = vector4(311.06, -582.96, 42.84, 160.00) , taken = false, model = 1631638868},
+        [3] = {coords = vector4(314.47, -584.2, 42.84, 160.00), taken = false, model = 1631638868},
+        --[4] = {coords = vector4(317.67, -585.37, 42.84, 160.00), taken = false, model = 1631638868},
+        --[5] = {coords = vector4(322.62, -587.17, 42.84, 160.00), taken = false, model = 1631638868},
+        --[6] = {coords = vector4(324.26, -582.8, 42.84, 340.00), taken = false, model = 1631638868},
+        --[7] = {coords = vector4(319.41, -581.04, 42.84, 340.00), taken = false, model = 1631638868},
+        --[8] = {coords = vector4(313.93, -579.04, 42.84, 340.00), taken = false, model = 1631638868},
+	    --[9] = {coords = vector4(309.35, -577.38, 42.84, 340.00), taken = false, model = 1631638868},
+
+        --Sala Surgery (Da esquerda para a direita)
+        --[10] = {coords = vector4(315.34, -566.45, 42.31, 340.00), taken = false, model = -1519439119},
+        --[11] = {coords = vector4(321.07, -568.4, 42.29, 340.00), taken = false, model = -1519439119},
+        --[12] = {coords = vector4(326.77, -571.08, 42.29, 340.00) , taken = false, model = -1519439119},
+
+        --Sala MRI
+        --[13] = {coords = vector4(337.0, -575.23, 42.27, 340.00), taken = false, model = -289946279},
+        --[14] = {coords = vector4(348.62, -579.46, 42.27, 340.00), taken = false, model = -289946279},
+
+        --Sala Private Room
+        --[15] = {coords = vector4(361.36, -581.3, 42.83, 250.00), taken = false, model = 1631638868},
+        --[16] = {coords = vector4(359.54, -586.23, 42.84, 250.00), taken = false, model = 1631638868},
+        --[17] = {coords = vector4(364.96, -585.94, 42.85, 250.00), taken = false, model = 1631638868},
+        --[18] = {coords = vector4(363.8, -589.12, 42.85, 250.00), taken = false, model = 1631638868},
+        --[19] = {coords = vector4(354.44, -600.19, 42.85, 250.00), taken = false, model = 1631638868},
+        --[20] = {coords = vector4(366.52, -581.66, 42.85, 250.00), taken = false, model = 1631638868},
+
+        --Sala Doctor Office
+        --[21] = {coords = vector4(357.55, -598.16, 42.84, 160.00), taken = false, model = -1091386327},
+        --[22] = {coords = vector4(354.18, -593.0, 42.84, 250.00), taken = false, model = -1091386327},
+
+        --Sala Treatment
+        --[23] = {coords = vector4(346.48, -590.34, 42.84, 70.00), taken = false, model = -1091386327},
+
     },
     ["jailbeds"] = {
-        [1] = {coords = vector4(1761.96, 2597.74, 45.66, 270.14), taken = false, model = 2117668672},
-        [2] = {coords = vector4(1761.96, 2591.51, 45.66, 269.8), taken = false, model = 2117668672},
-        [3] = {coords = vector4(1771.8, 2598.02, 45.66, 89.05), taken = false, model = 2117668672},
-        [4] = {coords = vector4(1771.85, 2591.85, 45.66, 91.51), taken = false, model = 2117668672},
+        [1] = {coords = vector4(1777.61, 2565.54, 45.36, 90.0), taken = false, model = 2117668672},
+        [2] = {coords = vector4(1781.71, 2565.44, 45.36, 270.0), taken = false, model = 2117668672},
+        [3] = {coords = vector4(1781.71, 2563.43, 45.36, 270.0), taken = false, model = 2117668672},
+        [4] = {coords = vector4(1777.61, 2563.43, 45.36, 90.0), taken = false, model = 2117668672},
+        [5] = {coords = vector4(1777.61, 2561.43, 45.36, 90.0), taken = false, model = 2117668672},
+        [6] = {coords = vector4(1777.61, 2559.03, 45.36, 90.0), taken = false, model = 2117668672},
+        [7] = {coords = vector4(1781.71, 2561.43, 45.36, 270.0), taken = false, model = 2117668672},
     },
     ["stations"] = {
         [1] = {label = Lang:t('info.pb_hospital'), coords = vector4(304.27, -600.33, 43.28, 272.249)}
@@ -89,27 +115,100 @@ Config.Locations = { -- Edit the various interaction points for players or creat
 }
 
 Config.AuthorizedVehicles = { -- Vehicles players can use based on their ambulance job grade level
-	-- Grade 0
+	-- Estagiário
 	[0] = {
-		["ambulance"] = "Ambulance",
+		["ambulance_inem"] = "Ambulância",
+        ["npwheelchair"] = "Cadeira de Rodas",
+        ["evo_inem"] = "Mitsubishi Evolution",
+        ["amarok_inem"] = "Carrinha ISN",
 	},
-	-- Grade 1
+	-- Assistente Técnico
 	[1] = {
-		["ambulance"] = "Ambulance",
-
+		["ambulance_inem"] = "Ambulância",
+        ["npwheelchair"] = "Cadeira de Rodas",
+        ["evo_inem"] = "Mitsubishi Evolution",
+        ["amarok_inem"] = "Carrinha ISN",
+        ["ambulancei"] = "VW Passat",
 	},
-	-- Grade 2
+	-- Enfermeiro
 	[2] = {
-		["ambulance"] = "Ambulance",
+		["ambulance_inem"] = "Ambulância",
+        ["npwheelchair"] = "Cadeira de Rodas",
+        ["evo_inem"] = "Mitsubishi Evolution",
+        ["amarok_inem"] = "Carrinha ISN",
+        ["ambulancei"] = "VW Passat",
 	},
-	-- Grade 3
+	-- Paramédico
 	[3] = {
-		["ambulance"] = "Ambulance",
+		["ambulance_inem"] = "Ambulância",
+        ["npwheelchair"] = "Cadeira de Rodas",
+        ["evo_inem"] = "Mitsubishi Evolution",
+        ["amarok_inem"] = "Carrinha ISN",
+        ["ambulancei"] = "VW Passat",
+        ["fordinem"] = "Ford Explorer",
+        ["bmwgs_inem"] = "BMW GS 1200",
+        ["audi_inem"] = "Audi A6",
 	},
-	-- Grade 4
+	-- Técnico Superior
 	[4] = {
-		["ambulance"] = "Ambulance",
-	}
+		["ambulance_inem"] = "Ambulância",
+        ["npwheelchair"] = "Cadeira de Rodas",
+        ["evo_inem"] = "Mitsubishi Evolution",
+        ["amarok_inem"] = "Carrinha ISN",
+        ["ambulancei"] = "VW Passat",
+        ["fordinem"] = "Ford Explorer",
+        ["bmwgs_inem"] = "BMW GS 1200",
+        ["audi_inem"] = "Audi A6",
+	},
+    -- Coordenador
+    [5] = {
+        ["ambulance_inem"] = "Ambulância",
+        ["npwheelchair"] = "Cadeira de Rodas",
+        ["evo_inem"] = "Mitsubishi Evolution",
+        ["amarok_inem"] = "Carrinha ISN",
+        ["ambulancei"] = "VW Passat",
+        ["fordinem"] = "Ford Explorer",
+        ["bmwgs_inem"] = "BMW GS 1200",
+        ["audi_inem"] = "Audi A6",
+        ["focus_inem"] = "Ford Focus",
+    },
+    -- Sub-Diretor
+    [6] = {
+        ["ambulance_inem"] = "Ambulância",
+        ["npwheelchair"] = "Cadeira de Rodas",
+        ["evo_inem"] = "Mitsubishi Evolution",
+        ["amarok_inem"] = "Carrinha ISN",
+        ["ambulancei"] = "VW Passat",
+        ["fordinem"] = "Ford Explorer",
+        ["bmwgs_inem"] = "BMW GS 1200",
+        ["audi_inem"] = "Audi A6",
+        ["focus_inem"] = "Ford Focus",
+    },
+    -- Diretor Adjunto
+    [7] = {
+        ["ambulance_inem"] = "Ambulância",
+        ["npwheelchair"] = "Cadeira de Rodas",
+        ["evo_inem"] = "Mitsubishi Evolution",
+        ["amarok_inem"] = "Carrinha ISN",
+        ["ambulancei"] = "VW Passat",
+        ["fordinem"] = "Ford Explorer",
+        ["bmwgs_inem"] = "BMW GS 1200",
+        ["audi_inem"] = "Audi A6",
+        ["focus_inem"] = "Ford Focus",
+    },
+    -- Diretor Geral de Saude
+    [8] = {
+        ["ambulance_inem"] = "Ambulância",
+        ["npwheelchair"] = "Cadeira de Rodas",
+        ["evo_inem"] = "Mitsubishi Evolution",
+        ["amarok_inem"] = "Carrinha ISN",
+        ["ambulancei"] = "VW Passat",
+        ["fordinem"] = "Ford Explorer",
+        ["bmwgs_inem"] = "BMW GS 1200",
+        ["audi_inem"] = "Audi A6",
+        ["focus_inem"] = "Ford Focus",
+        ["ngt19"] = "Nissan GTR",
+    }
 }
 
 Config.Items = { -- Items found in the ambulance shop for players with the ambulance job to purchase
@@ -163,6 +262,22 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
             info = {},
             type = "item",
             slot = 6,
+        },
+        [7] = {
+            name = "diving_fill",
+            price = 0,
+            amount = 2,
+            info = {},
+            type = "item",
+            slot = 7,
+        },
+        [8] = {
+            name = "diving_gear",
+            price = 0,
+            amount = 2,
+            info = {},
+            type = "item",
+            slot = 8,
         },
     }
 }

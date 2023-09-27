@@ -111,7 +111,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
             SetPedArmour(PlayerPedId(), PlayerData.metadata["armor"])
 			
             if (not PlayerData.metadata["inlaststand"] and PlayerData.metadata["isdead"]) then
-                deathTime = Laststand.ReviveInterval
+                deathTime = Config.ReviveInterval
                 OnDeath()
                 DeathTimer()
             elseif (PlayerData.metadata["inlaststand"] and not PlayerData.metadata["isdead"]) then
@@ -225,7 +225,7 @@ RegisterNetEvent('hospital:client:RevivePlayer', function()
             }, {
                 animDict = healAnimDict,
                 anim = healAnim,
-                flags = 16,
+                flags = 33,
             }, {}, {}, function() -- Done
                 StopAnimTask(PlayerPedId(), healAnimDict, "exit", 1.0)
                 QBCore.Functions.Notify(Lang:t('success.revived'), 'success')
@@ -256,7 +256,7 @@ RegisterNetEvent('hospital:client:TreatWounds', function()
             }, {
                 animDict = healAnimDict,
                 anim = healAnim,
-                flags = 16,
+                flags = 33,
             }, {}, {}, function() -- Done
                 StopAnimTask(PlayerPedId(), healAnimDict, "exit", 1.0)
                 QBCore.Functions.Notify(Lang:t('success.helped_player'), 'success')
